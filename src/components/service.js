@@ -13,7 +13,12 @@ export function getImages(){
 }
 
 export function getImageById(id){
-    return axios.get(baseURL + `/v1/images/${id}`)
+    const requestOptions = {
+        headers: {
+            "x-api-key": apiKey
+        },
+    };
+    return axios.get((baseURL + `/v1/images/${id}`),requestOptions);
 }
 
 export function getFavorites(){
@@ -95,7 +100,12 @@ export function voteDown(id){
 }
 
 export function getBreeds(){
-    return axios.get(baseURL + '/v1/breeds');
+    const requestOptions = {
+        headers: {
+            "x-api-key": apiKey
+        },
+    };
+    return axios.get((baseURL + '/v1/breeds'),requestOptions);
 }
 
 

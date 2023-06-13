@@ -9,15 +9,14 @@ const Breeds = ()=>{
 
     useEffect(()=>{
         getBreeds().then((response)=>{
-
-
-
+          const breedsWithImages = response.data;
+          console.log(breedsWithImages);
+          for (let i = 0; i < breedsWithImages.length; i++){
+            breedsWithImages[i].image = selectBreedImage(breedsWithImages[i].reference_image_id);
+          }
             setBreeds(response.data);
-
-
-            
-        }).catch(errorResp =>{setError(errorResp);
-        });
+          }).catch(errorResp =>{setError(errorResp);
+        })
     }, []);
 
     const handleSelectedBreed = (event)=>{
@@ -41,7 +40,7 @@ const Breeds = ()=>{
             </select>
             {selectedBreed && (
                 <div className="breed">
-                    <img src = {selectBreedImage(selectedBreed.reference_image_id)} alt={'cat'}/>
+                    <img src = {selectedBreed.image} alt={'cat'}/>
                     <h1>{selectedBreed.name}</h1>
                     <h2>{selectedBreed.id}</h2>
                     <p>{selectedBreed.temperament}</p>
