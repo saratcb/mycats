@@ -1,39 +1,8 @@
 .components {
   padding-top: 60px;
 }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: rgb(233, 204, 209);
-  position:fixed;
-  top:0;
-  width:100%;
-}
-
-li {
-  float: left;
-  text-align: center;
-  border-right: 1px solid gray;
-}
-
-li:last-child{
-  border-right:none;
-}
-li a {
-  display: block;
-  color:black;
-  padding: 14px 16px;
-  text-decoration: none;
-}
 
 li a.active {
   background-color: rgb(229, 139, 154);
   color: black;
-}
-
-li a:hover:not(.active) {
-  background-color: rgb(79, 79, 79);
-  color:whitesmoke;
 }

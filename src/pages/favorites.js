@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { deleteFromFavorites, getFavorites } from "./service";
-import './images.css';
+import { deleteFromFavorites, getFavorites } from "../api/service";
+import '../components/CatImages/images.css';
 
 const Favorites = ()=>{
     const [favorites, setFavorites] = useState ([]);

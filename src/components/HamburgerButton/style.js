@@ -4,7 +4,6 @@ export const StyledButton = styled.button`
     border:none;
     padding:0;
     padding-right: 10px;
-    background-color: transparent;
     cursor: pointer;
     display:none;
     position:relative;
@@ -13,5 +12,11 @@ export const StyledButton = styled.button`
     @media screen and (max-width: 670px){
         display:block;
         float:right;
+        background-image: url('./hamburger-md.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 24px;
+        height: 24px;
     }
+
 `
