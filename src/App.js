@@ -1,27 +1,24 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link, useLocation} from 'react-router-dom';
-import Images from "./components/images";
-import Upload from "./components/upload";
+import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import Images from "./components/CatImages/images";
+import Upload from "./pages/upload";
 import './App.css';
-import Vote from "./components/vote";
-import Favorites from "./components/favorites";
-import Breeds from "./components/breeds";
+import Vote from "./pages/vote";
+import Favorites from "./pages/favorites";
+import Breeds from "./pages/breeds";
+import { Home } from "./components/Home";
+import { Navbar } from "./components/Navbar";
 
 function App() {
   return (
     <Router>
     <div>
       <header>
-        <ul>
-          <li><Link className={'active'} to="/vote">Vote</Link></li>
-          <li><Link to="/breeds">Breeds</Link></li>
-          <li><Link to="/images">Images</Link></li>
-          <li><Link to="/favorites">Favorites</Link></li>
-          <li><Link to="/upload">Upload</Link></li>
-        </ul>
+        <Navbar/>
       </header>
       <div className="components">
         <Routes>
+          <Route path="" element = {<Home/>}/>
           <Route path="/vote" element = {<Vote/>}/>
           <Route path="/breeds" element = {<Breeds/>}/>
           <Route path="/images" element = {<Images/>}/>

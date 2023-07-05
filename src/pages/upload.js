@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { postImage } from "./service"
+import { postImage } from "../api/service"
 
 const Upload = ()=>{
     const [selectedImage, setSelectedImage] = useState(null);

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react"
-import {getImages, postToFavorites} from "./service";
+import {getImages, postToFavorites} from "../../api/service";
 import './images.css';
+import {GridImages, CatImage, StyledButton, StyledDiv} from "./style";
+import { StyledH1 } from "../Typography/style";
 
 const Images = ()=>{
     const [images, setImages] = useState([]);
@@ -22,14 +24,17 @@ const Images = ()=>{
     if(!images) return null;
 
     return (
-    <div className = 'gridImages'>
+    <>
+    <StyledH1>Add images to your favorites</StyledH1>
+    <GridImages>
         {images.map(image =>(
-            <div key = {image.id}>
-                <img src={image.url} alt={'cat'}/>
-                <button onClick={() =>addToFav(image.id)}>Add to favs</button>
-            </div>
+            <StyledDiv key = {image.id}>
+                <CatImage src={image.url} alt={'cat'}/>
+                <StyledButton onClick={() =>addToFav(image.id)}>Add to favs</StyledButton>
+            </StyledDiv>
         ))}
-    </div>
+    </GridImages>
+    </>
     );
 
 }

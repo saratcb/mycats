@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react"
-import { getRandomImage, postToFavorites, voteUp, voteDown} from "./service";
+import { getRandomImage, postToFavorites, voteUp, voteDown} from "../api/service";
 
 const Vote =()=>{
     const [randomImage, setRandomImage] = useState([]);
