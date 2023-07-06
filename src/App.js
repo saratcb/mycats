@@ -1,15 +1,15 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
-import Images from "./components/CatImages/images";
-import Upload from "./pages/upload";
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Images from "./pages/Images";
+import Upload from "./pages/Upload";
 import './App.css';
-import Vote from "./pages/vote";
-import Favorites from "./pages/favorites";
-import Breeds from "./pages/breeds";
-import { Home } from "./components/Home";
-import { Navbar } from "./components/Navbar";
+import Vote from "./pages/Vote";
+import Favorites from "./pages/Favorites";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Breeds from "./pages/Breeds";
 
-function App() {
+const App = ()=> {
   return (
     <Router>
     <div>

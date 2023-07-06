@@ -1,5 +1,10 @@
 import React, { useCallback, useEffect, useState } from "react"
 import { getRandomImage, postToFavorites, voteUp, voteDown} from "../api/service";
+import { ButtonsDiv, CatImage, ImageDiv, StyledDiv, TryButton, VoteDownButton } from "../style";
+import VoteButton from "../components/VoteButton";
+import thumbsUp from "../img/upvote-icon.jpg";
+import thumbsDown from "../img/downvote-icon.jpg";
+import heart from "../img/heart.png";
 
 const Vote =()=>{
     const [randomImage, setRandomImage] = useState([]);
@@ -33,16 +38,24 @@ const Vote =()=>{
     if(!randomImage) return null;
 
     return(
-        <div className='gridImages'>
+        <StyledDiv>
             {randomImage.map(image=>(
-                <div key = {image.id}>
-            <img src={image.url} alt={'cat'}/>
-            <button onClick={()=> selectVoteUp(image.id)}>Vote Up</button>
-            <button onClick={()=> selectVoteDown(image.id)}>Vote down</button>
-            <button onClick={() =>addToFav(image.id)}>Add to favs</button>
-            </div>
+                <ImageDiv key = {image.id}>
+                    <CatImage src={image.url} alt={'cat'}/>
+                    <ButtonsDiv>
+                        <VoteButton onClick={()=> selectVoteUp(image.id)} 
+                        image={thumbsUp}
+                        alt="thumbs up"></VoteButton>
+                        <VoteButton onClick={()=> selectVoteDown(image.id)}
+                        image={thumbsDown}
+                        alt="thumbs down"></VoteButton>
+                        <VoteButton onClick={() =>addToFav(image.id)}
+                        image={heart}
+                        alt="heart"></VoteButton>
+                    </ButtonsDiv>
+                </ImageDiv>
             ))}
-        </div>
+        </StyledDiv>
     );
 }
 export default Vote;

@@ -1,5 +1,11 @@
-import styled from 'styled-components';
+import { styled } from "styled-components";
 
+
+export const StyledDiv = styled.div `
+display: flex;
+align-items: center;
+flex-direction: column;
+`
 export const GridImages = styled.div `
     padding-top: 50px;
     display:flex;
@@ -23,12 +29,15 @@ export const StyledButton = styled.button`
     width:40%;
 
 `
-export const StyledDiv = styled.div `
+export const ImageDiv = styled.div `
     display:flex;
     flex-direction:column;
     border-radius: 10%;
-    border:5px solid rgb(199, 249, 204);
+    border:5px solid rgb(233, 204, 209);
     gap:10px;
     align-items: center;
 `
-
+export const ButtonsDiv = styled.div `
+    display: flex;
+    gap:30px;
+`
