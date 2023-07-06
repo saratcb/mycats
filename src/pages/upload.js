@@ -50,4 +50,4 @@ function handleDragOver(){
 
 }
 
-export default Upload
+export default Upload;
