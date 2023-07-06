@@ -13,7 +13,7 @@ const Favorites = ()=>{
             const updatedFavorites = favorites.filter((favorite)=>favorite.id !== id);
             setFavorites(updatedFavorites);
             }).catch((errorResp)=>{
-                setError(error.code); // 5005
+                setError(error.code); 
             });
     };
 
