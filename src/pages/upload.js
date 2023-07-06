@@ -39,7 +39,7 @@ const Upload = ()=>{
         </div>
       )}
     </div>
-    )
+    );
 
 function handleDrop(){
     return null
