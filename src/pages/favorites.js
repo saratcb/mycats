@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { deleteFromFavorites, getFavorites } from "../api/service";
-import '../components/CatImages/images.css';
+import { CatImage, GridImages, ImageDiv, StyledButton } from "../style";
+import heartbroken from "../img/heartbroken.png";
+import VoteButton from "../components/VoteButton";
 
 const Favorites = ()=>{
     const [favorites, setFavorites] = useState ([]);
@@ -25,14 +27,16 @@ const Favorites = ()=>{
     if(!favorites) return (null);
 
     return (
-    <div className = 'gridImages'>
+    <GridImages>
         {favorites.map(favorite =>(
-            <div key = {favorite.id}>
-                <img src={favorite.image.url} alt={'cat'}/>
-                <button onClick={() =>unFav(favorite.id)}>Unfav</button>
-            </div>
+            <ImageDiv key = {favorite.id}>
+                <CatImage src={favorite.image.url} alt={'cat'}/>
+                <VoteButton onClick={() =>unFav(favorite.id)}
+                            image={heartbroken}
+                            alt="heartbroken"></VoteButton>
+            </ImageDiv>
         ))}
-    </div>
+    </GridImages>
     );
 }
 export default Favorites

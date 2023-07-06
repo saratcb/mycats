@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getBreeds, getImageById } from "../api/service";
-import "../components/CatImages/images.css";
+import "../index.css";
+import { CatImage } from "../style";
 
 const Breeds = () => {
   const [breeds, setBreeds] = useState([]);
@@ -11,7 +12,6 @@ const Breeds = () => {
     getBreeds()
       .then((response) => {
         const breedsWithImages = response.data;
-        console.log(breedsWithImages);
         const promises = breedsWithImages.map((breed) =>
           selectBreedImage(breed.reference_image_id)
             .then((imageUrl) => {
@@ -50,7 +50,7 @@ const Breeds = () => {
             setError(errorResp);
             reject(errorResp);
           });
-      }, 1000); // Add a delay of 1 second between each request
+      }, 1000); 
     });
   };
 
@@ -68,7 +68,7 @@ const Breeds = () => {
       </select>
       {selectedBreed && (
         <div className="breed">
-          <img src={selectedBreed.image} alt={"cat"} />
+          <CatImage src={selectedBreed.image} alt={"cat"} />
           <h1>{selectedBreed.name}</h1>
           <h2>{selectedBreed.id}</h2>
           <p>{selectedBreed.temperament}</p>
